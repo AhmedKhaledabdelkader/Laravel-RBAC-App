@@ -10,4 +10,9 @@ Route::post('/login', [UserController::class, 'authenticateUser']) ->middleware(
 
 Route::post('/update-role', [UserController::class, 'updateRole'])->middleware(['auth','validate.admin','validate.modifyRole']);
 
-Route::get('/getAll', [UserController::class, 'retrieveUsers'])->middleware(['auth','premission:get_users']);
+Route::get('/getAll', [UserController::class,'retrieveUsers'])->middleware(['auth','premission:get_users']);
+
+Route::post('/update-premissions/{id}',[UserController::class,'updatePremissions'])->middleware(['auth','validate.admin','validate.premission']);
+
+
+// update premission

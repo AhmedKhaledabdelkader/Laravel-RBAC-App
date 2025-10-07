@@ -8,5 +8,7 @@ interface RoleRepositoryInterface
 
     public function findByRoleName(string $role);
 
+    public function findByRoleId($id) ;
+
 
 }

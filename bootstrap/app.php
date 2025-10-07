@@ -23,6 +23,8 @@ return Application::configure(basePath: dirname(__DIR__))
             'validate.userLogin' => \App\Http\Middleware\ValidateAuthentication::class,
             'auth' => \App\Http\Middleware\AuthMiddleware::class,
             'premission' => \App\Http\Middleware\PremissionMiddleware::class,
+            'validate.premission' => \App\Http\Middleware\ValidatePremissions::class,
+
 
 ]);
 

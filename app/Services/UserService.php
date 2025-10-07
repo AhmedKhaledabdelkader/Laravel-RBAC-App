@@ -33,7 +33,7 @@ class UserService
 
        $user->roles()->attach($data["roles"]);
 
-       return $user ;
+       return $user;
 
 
     }
@@ -117,6 +117,29 @@ public function login(array $data){
 
 
 
+    public function updatePremissions(array $data,$id){
+
+
+        $role=$this->roleRepo->findByRoleId($id) ;
+
+        $premissions=$role->premissions ?? [] ;
+
+        $premissions[]=$data["permissions"];
+
+       $role->premissions=array_merge($role->premissions ?? [] , $data["permissions"]);
+
+       $role->save();
+
+
+       return response()->json([
+
+        "message"=>"update premissions successfully",
+        "role"=>$role
+
+       ],200);
+
+
+    }
 
 
 

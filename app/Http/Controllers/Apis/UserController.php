@@ -38,7 +38,8 @@ class UserController extends Controller
     public function authenticateUser(Request $request){
 
 
-        return $this->userService->login($request->all());
+        
+     return $this->userService->login($request->all());
 
 
     }
@@ -73,6 +74,19 @@ class UserController extends Controller
 
 
         return $this->userService->retrieveUsers();
+
+
+    }
+
+
+
+
+    public function updatePremissions(Request $request,$id){
+
+
+
+        return $this->userService->updatePremissions($request->all(),$id);
+
 
 
     }

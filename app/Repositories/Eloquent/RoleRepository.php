@@ -12,5 +12,16 @@ class RoleRepository implements RoleRepositoryInterface
     {
         return Role::where("name",$role)->first();
     }
+
+
+    public function findByRoleId($id)
+    {
+   
+        return Role::find($id);
+        
+    }
+   
+
+
    
 }
